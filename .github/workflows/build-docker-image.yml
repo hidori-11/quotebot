@@ -1,6 +1,6 @@
 # referenced from https://qiita.com/kawakawaryuryu/items/b0291c1bc1141a535263
 
-name: Build and Publish Docker
+name: Build Test Docker
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          push: true
+          push: false
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
             ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:1.0.0
